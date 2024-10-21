@@ -39,8 +39,7 @@
 		104E3DC72CC27BC4005BD596 /* Nocturnal Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nocturnal Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EFB4932CC6E06E002F7A2C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		10EFB4942CC6E06E002F7A2C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		10EFB4952CC6E06E002F7A2C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
-		10EFB4962CC6E5F0002F7A2C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		10EFB4972CC6E6B2002F7A2C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -109,8 +108,7 @@
 				104E3DAB2CC27BC0005BD596 /* Products */,
 				10EFB4932CC6E06E002F7A2C /* .gitignore */,
 				10EFB4942CC6E06E002F7A2C /* README.md */,
-				10EFB4952CC6E06E002F7A2C /* TODO.md */,
-				10EFB4962CC6E5F0002F7A2C /* TODO.md */,
+				10EFB4972CC6E6B2002F7A2C /* TODO.md */,
 			);
 			sourceTree = "<group>";
 		};
