@@ -1,42 +1,45 @@
-//
-//  SafariWebExtensionHandler.swift
-//  Nocturnal Extension
-//
-//  Created by Kuba R on 18/10/2024.
-//
-
 import SafariServices
 import os.log
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
-
     func beginRequest(with context: NSExtensionContext) {
-        let request = context.inputItems.first as? NSExtensionItem
-
-        let profile: UUID?
-        if #available(iOS 17.0, macOS 14.0, *) {
-            profile = request?.userInfo?[SFExtensionProfileKey] as? UUID
-        } else {
-            profile = request?.userInfo?["profile"] as? UUID
+        let item = context.inputItems[0] as! NSExtensionItem
+        let message = item.userInfo?[SFExtensionMessageKey]
+        
+        if let message = message as? [String: Any] {
+            if let messageType = message["type"] as? String {
+                if messageType == "saveSettings" {
+                    if let settings = message["settings"] as? [String: Any] {
+                        // Save settings to UserDefaults
+                        UserDefaults.suite?.set(settings, forKey: "darkModeSettings")
+                        UserDefaults.suite?.synchronize()
+                        
+                        // Return the saved settings as confirmation
+                        let response = NSExtensionItem()
+                        response.userInfo = [ SFExtensionMessageKey: settings ]
+                        context.completeRequest(returningItems: [response], completionHandler: nil)
+                        return
+                    }
+                } else if messageType == "getSettings" {
+                    // Retrieve settings from UserDefaults
+                    let settings = UserDefaults.suite?.dictionary(forKey: "darkModeSettings") ?? [
+                        "mode": "auto_sunset",
+                        "sunriseTime": "06:00",
+                        "sunsetTime": "18:00"
+                    ]
+                    
+                    let response = NSExtensionItem()
+                    response.userInfo = [ SFExtensionMessageKey: settings ]
+                    context.completeRequest(returningItems: [response], completionHandler: nil)
+                    return
+                }
+            }
         }
-
-        let message: Any?
-        if #available(iOS 15.0, macOS 11.0, *) {
-            message = request?.userInfo?[SFExtensionMessageKey]
-        } else {
-            message = request?.userInfo?["message"]
-        }
-
-        os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@ (profile: %@)", String(describing: message), profile?.uuidString ?? "none")
-
-        let response = NSExtensionItem()
-        if #available(iOS 15.0, macOS 11.0, *) {
-            response.userInfo = [ SFExtensionMessageKey: [ "echo": message ] ]
-        } else {
-            response.userInfo = [ "message": [ "echo": message ] ]
-        }
-
-        context.completeRequest(returningItems: [ response ], completionHandler: nil)
+        
+        context.completeRequest(returningItems: [], completionHandler: nil)
     }
+}
 
+extension UserDefaults {
+    static let suite = UserDefaults(suiteName: "group.your.app.identifier")
 }

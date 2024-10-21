@@ -1,0 +1,59 @@
+/* Base dark mode styles */
+:root.dark-mode,
+html[data-nocturnal-dark="true"] {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+/* Target all elements except images and videos */
+:root.dark-mode *:not(img):not(video),
+html[data-nocturnal-dark="true"] *:not(img):not(video) {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #333333 !important;
+}
+
+/* Specific elements override */
+:root.dark-mode input,
+:root.dark-mode textarea,
+:root.dark-mode select,
+html[data-nocturnal-dark="true"] input,
+html[data-nocturnal-dark="true"] textarea,
+html[data-nocturnal-dark="true"] select {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
+    border-color: #404040 !important;
+}
+
+/* Links */
+:root.dark-mode a,
+html[data-nocturnal-dark="true"] a {
+    color: #66b3ff !important;
+}
+
+/* Specific styles for images and videos */
+:root.dark-mode img,
+:root.dark-mode video,
+html[data-nocturnal-dark="true"] img,
+html[data-nocturnal-dark="true"] video {
+    filter: brightness(0.8) !important;
+}
+
+/* Site-specific fixes */
+/* Google Search when NOT using native dark mode */
+html[data-nocturnal-dark="true"] .RNNXgb,
+:root.dark-mode .RNNXgb {
+    background-color: #2d2d2d !important;
+}
+
+html[data-nocturnal-dark="true"] .gLFyf,
+:root.dark-mode .gLFyf {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
+}
+
+/* Helper class to force exclude elements from dark mode */
+.nocturnal-exclude {
+    background-color: inherit !important;
+    color: inherit !important;
+}
