@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		104E3DC82CC27BC4005BD596 /* Nocturnal Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 104E3DC72CC27BC4005BD596 /* Nocturnal Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		10EFB4922CC6DEE2002F7A2C /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = 10EFB4912CC6DEDE002F7A2C /* TODO.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,9 @@
 /* Begin PBXFileReference section */
 		104E3DAA2CC27BC0005BD596 /* Nocturnal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nocturnal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		104E3DC72CC27BC4005BD596 /* Nocturnal Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nocturnal Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		10EFB4912CC6DEDE002F7A2C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		10EFB4932CC6E06E002F7A2C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		10EFB4942CC6E06E002F7A2C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		10EFB4952CC6E06E002F7A2C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -102,10 +103,12 @@
 		104E3DA12CC27BC0005BD596 = {
 			isa = PBXGroup;
 			children = (
-				10EFB4912CC6DEDE002F7A2C /* TODO.md */,
 				104E3DAC2CC27BC0005BD596 /* Nocturnal */,
 				104E3DCB2CC27BC4005BD596 /* Nocturnal Extension */,
 				104E3DAB2CC27BC0005BD596 /* Products */,
+				10EFB4932CC6E06E002F7A2C /* .gitignore */,
+				10EFB4942CC6E06E002F7A2C /* README.md */,
+				10EFB4952CC6E06E002F7A2C /* TODO.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10EFB4922CC6DEE2002F7A2C /* TODO.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
